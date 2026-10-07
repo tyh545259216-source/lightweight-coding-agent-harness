@@ -20,11 +20,11 @@ from mini_harness.tools.base import BaseTool, InputModel
 async def run_process(
     argv: list[str], cwd: str, limit: int = 16000, *, extra_env: dict[str, str] | None = None
 ) -> str:
-    options: dict[str, Any] = (
-        {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP}
-        if sys.platform == "win32"
-        else {"start_new_session": True}
-    )
+    options: dict[str, Any]
+    if sys.platform == "win32":
+        options = {"creationflags": subprocess.CREATE_NEW_PROCESS_GROUP}
+    else:
+        options = {"start_new_session": True}
     env = {k: v for k, v in os.environ.items() if not k.startswith(("PYTHON", "GIT_"))}
     env.update(
         {"PYTHONIOENCODING": "utf-8", "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": os.devnull}
