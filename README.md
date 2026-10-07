@@ -1,5 +1,7 @@
 # Lightweight Coding Agent Harness
 
+[![CI](https://github.com/tyh545259216-source/lightweight-coding-agent-harness/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/tyh545259216-source/lightweight-coding-agent-harness/actions/workflows/ci.yml)
+
 A lightweight Coding Agent execution framework with an independently implemented Agent Runtime.
 
 轻量级 Coding Agent 执行框架（自研 Agent Runtime）
@@ -94,9 +96,11 @@ Read the [evaluation philosophy](docs/EVALUATION_PHILOSOPHY.md), [V3 report](doc
 - MCP is limited to the implemented legacy stdio protocol subset.
 - Workspace permission is not an OS sandbox; tests and Python execute with host privileges.
 - Forced patch preference has insufficient empirical evidence.
-- Remote CI is configured but **NOT RUN**; no GitHub repository or release was published.
+- Live Ollama tutorials remain **NOT RUN**; offline demos and engineering CI do not establish model coding ability.
 
 ## Development
+
+[GitHub Actions](https://github.com/tyh545259216-source/lightweight-coding-agent-harness/actions/workflows/ci.yml) validates the offline engineering checks on **Ubuntu and Windows / Python 3.12**. CI does not download models or run coding benchmarks.
 
 ```sh
 python -c "from pathlib import Path; Path('work').mkdir(exist_ok=True)"
