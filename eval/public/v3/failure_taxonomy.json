@@ -1,0 +1,26 @@
+{
+  "qwen3-1.7b": {
+    "failures": 0,
+    "counts": {},
+    "status": "Standalone development NOT RUN",
+    "full_mechanism_subset": {
+      "records": 20,
+      "failures": 14,
+      "counts": {
+        "FILE_NAVIGATION": 3,
+        "PLANNING": 2,
+        "CONTEXT_LOSS": 3,
+        "PROVIDER": 3,
+        "EDIT_QUALITY": 2,
+        "OTHER": 1
+      },
+      "scope": "Selected development mechanism subset, not full50"
+    }
+  },
+  "qwen3-4b": {
+    "failures": 48,
+    "counts": {
+      "DEPLOYMENT_BUDGET_TIMEOUT": 48
+    }
+  }
+}

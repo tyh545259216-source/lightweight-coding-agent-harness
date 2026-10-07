@@ -1,0 +1,12 @@
+# Project instructions
+- Goal: explainable, testable coding-agent runtime; no imported agent loop/registry/context framework.
+- Python 3.12+, asyncio, Pydantic, httpx; keep dependencies minimal.
+- Runner orchestrates; providers only transport; tools only implement capabilities; executor owns validation/security/journaling.
+- Tests: python -m pytest --cov=mini_harness --cov-report=term-missing --cov-report=json:eval/results/coverage.json
+- Lint: python -m ruff check src tests examples; format: python -m ruff format --check src tests examples
+- Types: python -m mypy src/mini_harness
+- Do not casually modify eval/tasks/heldout.jsonl, recorded results, or permission/recovery invariants.
+- Every tool has a strict schema and permission; paths are resolved inside workspace; execute never means OS sandboxing.
+- Never replay an uncertain side-effect tool. Never implement shell=True or accept arbitrary executable paths by default.
+- No fabricated benchmark numbers. Label FakeProvider runs as scripted harness regression, not model intelligence.
+- Keep docs and PLAN.md synchronized with code; record limitations honestly.

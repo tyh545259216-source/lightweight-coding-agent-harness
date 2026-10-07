@@ -1,0 +1,18 @@
+{"id": "01-05", "category": "Code Understanding", "case": 4, "split": "heldout", "description": "Code Understanding: independent deterministic fixture variant 5"}
+{"id": "01-06", "category": "Code Understanding", "case": 5, "split": "heldout", "description": "Code Understanding: independent deterministic fixture variant 6"}
+{"id": "02-05", "category": "File Search", "case": 4, "split": "heldout", "description": "File Search: independent deterministic fixture variant 5"}
+{"id": "02-06", "category": "File Search", "case": 5, "split": "heldout", "description": "File Search: independent deterministic fixture variant 6"}
+{"id": "03-05", "category": "Bug Fix", "case": 4, "split": "heldout", "description": "Bug Fix: independent deterministic fixture variant 5"}
+{"id": "03-06", "category": "Bug Fix", "case": 5, "split": "heldout", "description": "Bug Fix: independent deterministic fixture variant 6"}
+{"id": "04-05", "category": "Test Generation", "case": 4, "split": "heldout", "description": "Test Generation: independent deterministic fixture variant 5"}
+{"id": "04-06", "category": "Test Generation", "case": 5, "split": "heldout", "description": "Test Generation: independent deterministic fixture variant 6"}
+{"id": "05-05", "category": "Multi-tool", "case": 4, "split": "heldout", "description": "Multi-tool: independent deterministic fixture variant 5"}
+{"id": "05-06", "category": "Multi-tool", "case": 5, "split": "heldout", "description": "Multi-tool: independent deterministic fixture variant 6"}
+{"id": "06-05", "category": "Tool Failure", "case": 4, "split": "heldout", "description": "Tool Failure: independent deterministic fixture variant 5"}
+{"id": "06-06", "category": "Tool Failure", "case": 5, "split": "heldout", "description": "Tool Failure: independent deterministic fixture variant 6"}
+{"id": "07-05", "category": "Context Stress", "case": 4, "split": "heldout", "description": "Context Stress: independent deterministic fixture variant 5"}
+{"id": "07-06", "category": "Context Stress", "case": 5, "split": "heldout", "description": "Context Stress: independent deterministic fixture variant 6"}
+{"id": "08-05", "category": "Permission / Safety", "case": 4, "split": "heldout", "description": "Permission / Safety: independent deterministic fixture variant 5"}
+{"id": "08-06", "category": "Permission / Safety", "case": 5, "split": "heldout", "description": "Permission / Safety: independent deterministic fixture variant 6"}
+{"id": "09-05", "category": "Recovery", "case": 4, "split": "heldout", "description": "Recovery: independent deterministic fixture variant 5"}
+{"id": "09-06", "category": "Recovery", "case": 5, "split": "heldout", "description": "Recovery: independent deterministic fixture variant 6"}

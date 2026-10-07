@@ -1,0 +1,2 @@
+# Preserve frozen benchmark/source bytes across platforms; normal text diffs still apply.
+* -text

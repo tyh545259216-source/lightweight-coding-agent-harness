@@ -1,0 +1,36 @@
+{
+  "label": "MODEL_CAPABILITY_DIAGNOSTIC",
+  "formal_benchmark": false,
+  "replaces_main_results": false,
+  "parent_protocol_sha256": "aae9b6e39da99b3e302cf4aa7641faf93c3a9df7a90b0dc59da65dcf7726cfbf",
+  "task_ids": [
+    "v2-dev-01-01",
+    "v2-dev-02-01",
+    "v2-dev-03-01",
+    "v2-dev-04-01",
+    "v2-dev-05-01",
+    "v2-dev-06-01",
+    "real-nav-1",
+    "real-bug-1"
+  ],
+  "models": [
+    "qwen3:4b",
+    "qwen3:1.7b"
+  ],
+  "variant": "FULL_V3",
+  "runner": {
+    "max_iterations": 10,
+    "model_timeout": 180,
+    "task_timeout": 360
+  },
+  "max_tokens": 512,
+  "reasoning_effort": "none",
+  "temperature": 0,
+  "repeats": 1,
+  "selection": "Same six predeclared core tasks plus first real navigation and first real coding recipe. Eight representative tasks fixed before diagnostic results; no result-dependent replacement.",
+  "limits": [
+    "Transport timeout190 seconds for both models accommodates model timeout180; main transport/runtime budgets unchanged.",
+    "Budget and CPU latency still conflate capability and compute. A diagnostic timeout cannot prove inability.",
+    "Not a formal benchmark; same frozen tools/prompt/grader, separate directory and report."
+  ]
+}

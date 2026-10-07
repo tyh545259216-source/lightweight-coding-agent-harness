@@ -1,0 +1,89 @@
+{
+  "label": "ACTUAL_OFFLINE_SCRIPTED_TUTORIAL_NOT_MODEL_BENCHMARK",
+  "demo": "navigation",
+  "events": [
+    {
+      "event": "tool_requested",
+      "tool": "repository_map",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "repository_map",
+      "ok": true,
+      "origin": "model"
+    },
+    {
+      "event": "tool_requested",
+      "tool": "symbol_search",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "symbol_search",
+      "ok": true,
+      "origin": "model"
+    },
+    {
+      "event": "tool_requested",
+      "tool": "read_file",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "read_file",
+      "ok": true,
+      "origin": "model"
+    },
+    {
+      "event": "tool_requested",
+      "tool": "read_file",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "read_file",
+      "ok": true,
+      "origin": "model"
+    },
+    {
+      "event": "tool_requested",
+      "tool": "apply_patch",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "apply_patch",
+      "ok": true,
+      "origin": "model"
+    },
+    {
+      "event": "tool_requested",
+      "tool": "run_tests",
+      "origin": "verification"
+    },
+    {
+      "event": "tool_result",
+      "tool": "run_tests",
+      "ok": true,
+      "origin": "verification",
+      "test_exit_code": 0
+    },
+    {
+      "event": "tool_requested",
+      "tool": "run_tests",
+      "origin": "model"
+    },
+    {
+      "event": "tool_result",
+      "tool": "run_tests",
+      "ok": true,
+      "origin": "model",
+      "test_exit_code": 0
+    },
+    {
+      "event": "terminal",
+      "stop_reason": "final_answer"
+    }
+  ]
+}

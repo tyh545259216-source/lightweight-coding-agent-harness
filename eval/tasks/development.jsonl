@@ -1,0 +1,36 @@
+{"id": "01-01", "category": "Code Understanding", "case": 0, "split": "development", "description": "Code Understanding: independent deterministic fixture variant 1"}
+{"id": "01-02", "category": "Code Understanding", "case": 1, "split": "development", "description": "Code Understanding: independent deterministic fixture variant 2"}
+{"id": "01-03", "category": "Code Understanding", "case": 2, "split": "development", "description": "Code Understanding: independent deterministic fixture variant 3"}
+{"id": "01-04", "category": "Code Understanding", "case": 3, "split": "development", "description": "Code Understanding: independent deterministic fixture variant 4"}
+{"id": "02-01", "category": "File Search", "case": 0, "split": "development", "description": "File Search: independent deterministic fixture variant 1"}
+{"id": "02-02", "category": "File Search", "case": 1, "split": "development", "description": "File Search: independent deterministic fixture variant 2"}
+{"id": "02-03", "category": "File Search", "case": 2, "split": "development", "description": "File Search: independent deterministic fixture variant 3"}
+{"id": "02-04", "category": "File Search", "case": 3, "split": "development", "description": "File Search: independent deterministic fixture variant 4"}
+{"id": "03-01", "category": "Bug Fix", "case": 0, "split": "development", "description": "Bug Fix: independent deterministic fixture variant 1"}
+{"id": "03-02", "category": "Bug Fix", "case": 1, "split": "development", "description": "Bug Fix: independent deterministic fixture variant 2"}
+{"id": "03-03", "category": "Bug Fix", "case": 2, "split": "development", "description": "Bug Fix: independent deterministic fixture variant 3"}
+{"id": "03-04", "category": "Bug Fix", "case": 3, "split": "development", "description": "Bug Fix: independent deterministic fixture variant 4"}
+{"id": "04-01", "category": "Test Generation", "case": 0, "split": "development", "description": "Test Generation: independent deterministic fixture variant 1"}
+{"id": "04-02", "category": "Test Generation", "case": 1, "split": "development", "description": "Test Generation: independent deterministic fixture variant 2"}
+{"id": "04-03", "category": "Test Generation", "case": 2, "split": "development", "description": "Test Generation: independent deterministic fixture variant 3"}
+{"id": "04-04", "category": "Test Generation", "case": 3, "split": "development", "description": "Test Generation: independent deterministic fixture variant 4"}
+{"id": "05-01", "category": "Multi-tool", "case": 0, "split": "development", "description": "Multi-tool: independent deterministic fixture variant 1"}
+{"id": "05-02", "category": "Multi-tool", "case": 1, "split": "development", "description": "Multi-tool: independent deterministic fixture variant 2"}
+{"id": "05-03", "category": "Multi-tool", "case": 2, "split": "development", "description": "Multi-tool: independent deterministic fixture variant 3"}
+{"id": "05-04", "category": "Multi-tool", "case": 3, "split": "development", "description": "Multi-tool: independent deterministic fixture variant 4"}
+{"id": "06-01", "category": "Tool Failure", "case": 0, "split": "development", "description": "Tool Failure: independent deterministic fixture variant 1"}
+{"id": "06-02", "category": "Tool Failure", "case": 1, "split": "development", "description": "Tool Failure: independent deterministic fixture variant 2"}
+{"id": "06-03", "category": "Tool Failure", "case": 2, "split": "development", "description": "Tool Failure: independent deterministic fixture variant 3"}
+{"id": "06-04", "category": "Tool Failure", "case": 3, "split": "development", "description": "Tool Failure: independent deterministic fixture variant 4"}
+{"id": "07-01", "category": "Context Stress", "case": 0, "split": "development", "description": "Context Stress: independent deterministic fixture variant 1"}
+{"id": "07-02", "category": "Context Stress", "case": 1, "split": "development", "description": "Context Stress: independent deterministic fixture variant 2"}
+{"id": "07-03", "category": "Context Stress", "case": 2, "split": "development", "description": "Context Stress: independent deterministic fixture variant 3"}
+{"id": "07-04", "category": "Context Stress", "case": 3, "split": "development", "description": "Context Stress: independent deterministic fixture variant 4"}
+{"id": "08-01", "category": "Permission / Safety", "case": 0, "split": "development", "description": "Permission / Safety: independent deterministic fixture variant 1"}
+{"id": "08-02", "category": "Permission / Safety", "case": 1, "split": "development", "description": "Permission / Safety: independent deterministic fixture variant 2"}
+{"id": "08-03", "category": "Permission / Safety", "case": 2, "split": "development", "description": "Permission / Safety: independent deterministic fixture variant 3"}
+{"id": "08-04", "category": "Permission / Safety", "case": 3, "split": "development", "description": "Permission / Safety: independent deterministic fixture variant 4"}
+{"id": "09-01", "category": "Recovery", "case": 0, "split": "development", "description": "Recovery: independent deterministic fixture variant 1"}
+{"id": "09-02", "category": "Recovery", "case": 1, "split": "development", "description": "Recovery: independent deterministic fixture variant 2"}
+{"id": "09-03", "category": "Recovery", "case": 2, "split": "development", "description": "Recovery: independent deterministic fixture variant 3"}
+{"id": "09-04", "category": "Recovery", "case": 3, "split": "development", "description": "Recovery: independent deterministic fixture variant 4"}

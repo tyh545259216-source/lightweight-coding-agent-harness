@@ -1,0 +1,62 @@
+{
+  "tests": 235,
+  "skipped": 0,
+  "whole_project": {
+    "num_statements": 3405,
+    "covered_lines": 3031,
+    "num_branches": 1094,
+    "covered_branches": 849,
+    "statement": 89.01615271659324,
+    "branch": 77.60511882998172,
+    "combined": 86.24138697488331
+  },
+  "core_v2_comparable_scope": {
+    "num_statements": 2359,
+    "covered_lines": 2193,
+    "num_branches": 762,
+    "covered_branches": 627,
+    "statement": 92.96311996608732,
+    "branch": 82.28346456692914,
+    "combined": 90.35565523870554
+  },
+  "core_excluding_both_clis": {
+    "num_statements": 2283,
+    "covered_lines": 2128,
+    "num_branches": 744,
+    "covered_branches": 619,
+    "statement": 93.21068769163381,
+    "branch": 83.1989247311828,
+    "combined": 90.74991740997687
+  },
+  "checks": {
+    "pytest": {
+      "returncode": 0,
+      "duration": 127.28023380000002
+    },
+    "ruff": {
+      "returncode": 0,
+      "duration": 0.3620905999999877
+    },
+    "format": {
+      "returncode": 0,
+      "duration": 0.1501404000000548
+    },
+    "mypy": {
+      "returncode": 0,
+      "duration": 0.7340159000000313
+    },
+    "offline_demo": {
+      "returncode": 0,
+      "duration": 3.7564978000000337
+    },
+    "mcp_demo": {
+      "returncode": 0,
+      "duration": 1.0233672999999044
+    }
+  },
+  "earlier_acceptance": {
+    "tests": 228,
+    "whole_statement": 88.72246696035242
+  },
+  "remote_ci": "NOT VERIFIED; explicitly skipped, no publication"
+}

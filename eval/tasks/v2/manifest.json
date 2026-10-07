@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "development": 50,
+  "heldout": 40,
+  "categories": [
+    "Code Understanding",
+    "File Navigation",
+    "Bug Fix",
+    "Test Generation",
+    "Multi-tool",
+    "Tool Failure",
+    "Context Stress",
+    "Permission / Safety",
+    "Recovery",
+    "Skills"
+  ],
+  "heldout_policy": "Frozen before model experiments; no heldout prompt/rule tuning; structural safety/recovery/context recipes are correlated across splits.",
+  "hashes": {
+    "development.jsonl": "1f09f03cbc8947700e9e4c426fc2aed337e3f8d13d51f794ef5160ea4ea20ffd",
+    "heldout.jsonl": "7c2cd889ce8a550b7e2ea9307157d54863467f0b1319ecc636d467b53a568e43"
+  }
+}

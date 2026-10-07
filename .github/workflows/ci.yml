@@ -1,0 +1,29 @@
+name: offline-quality
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  checks:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements-lock.txt
+      - run: python -m pip install --no-deps --no-build-isolation -e .
+      - run: python -c "from pathlib import Path; Path('work').mkdir(exist_ok=True)"
+      - run: python -m pytest --basetemp=work/pytest-ci --cov=mini_harness --cov-branch --cov-report=term-missing --cov-report=json:work/coverage.json
+      - run: python -m ruff check src tests examples
+      - run: python -m ruff format --check src tests examples
+      - run: python -m mypy src/mini_harness
+      - run: python examples/tutorial_demo.py
+      - run: python examples/tutorial_demo.py --demo navigation
+      - run: python -m mini_harness.cli demo --workspace work/ci-legacy-offline
+      - run: python examples/mcp_demo.py
+      - run: python scripts/audit_release_candidate.py

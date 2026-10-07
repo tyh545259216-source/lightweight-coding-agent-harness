@@ -1,0 +1,96 @@
+{
+  "repository": "https://github.com/dbader/schedule",
+  "commit": "82a43db1b938d8fdf60103bd41f329e06c8d3651",
+  "snapshot": "minimal source/test/package metadata snapshot via official GitHub blobs; Git clone reset/codeload DNS failed",
+  "hashes": {
+    "LICENSE.txt": "30a8352c318ce1b645acde0299697342d4380ed2637d7ca18a8ad25661e3b41b",
+    "AUTHORS.rst": "fc397bcb78f61662de18871924431d8a4c50af771efad99f3d38e3b86df88699",
+    "README.rst": "9ea359c58146bed4be272a92ef4761a0a9585e801c0a69da4ad1ecfa6854b770",
+    "pyproject.toml": "a48c79e2096ac67baf58e1107adffbbae9a4d6479ed6c8528a5b97ff76c7d996",
+    "setup.py": "489d711917bac84051c6712d3941c00f199f43fc1b226e98f2cdccd6b1835336",
+    "setup.cfg": "0c0a8a2ff25601da098a4a0c6a2d3bd955d20ea65cb077cc106a8a7420768a87",
+    "schedule/__init__.py": "b0c93f8ee84cbb8dbb98bcb8284864f4ea04012fdbc216de13f8ad2141d09efa",
+    "test_schedule.py": "71fa3781959b0dee649acc01e618559792c52c6375b82880945764819d5d5523",
+    "requirements-dev.txt": "b2bb7d90313bb01634130284e72ac562f0b4f3d4c0272fafc5a541fc2695e6fe"
+  },
+  "license": "MIT",
+  "attribution": "Copyright (c) 2013 Daniel Bader; third-party source is not harness implementation",
+  "task_count": 8,
+  "defect_origin": "Three deliberately injected defects in pinned upstream source; not historical issue-resolution claims",
+  "canonical_scope": "Four deterministic curated contract tests, plus generated candidate for test-addition task; full upstream suite not claimed",
+  "contract_tests": "import datetime\nfrom unittest.mock import patch\nimport schedule\n\n\ndef test_tag_filter_and_copy():\n    scheduler=schedule.Scheduler()\n    first=schedule.Job(1,scheduler);first.tags={\"a\"}\n    second=schedule.Job(1,scheduler);second.tags={\"b\"}\n    scheduler.jobs=[first,second]\n    assert scheduler.get_jobs(\"a\")==[first]\n    assert scheduler.get_jobs(\"missing\")==[]\n    selected=scheduler.get_jobs();selected.clear()\n    assert scheduler.jobs==[first,second]\n\n\ndef test_cancel_only_requested_and_ignore_absent():\n    scheduler=schedule.Scheduler()\n    first=schedule.Job(1,scheduler);second=schedule.Job(1,scheduler)\n    scheduler.jobs=[first,second]\n    scheduler.cancel_job(first)\n    assert scheduler.jobs==[second]\n    scheduler.cancel_job(first)\n    assert scheduler.jobs==[second]\n\n\ndef test_overdue_strict_boundary_and_none():\n    clock=datetime.datetime(2025,1,2,3,4,5)\n    job=schedule.Job(1)\n    assert not job._is_overdue(clock)\n    job.cancel_after=clock\n    assert not job._is_overdue(clock)\n    assert job._is_overdue(clock+datetime.timedelta(microseconds=1))\n    assert not job._is_overdue(clock-datetime.timedelta(microseconds=1))\n\n\ndef test_should_run_inclusive_boundary():\n    clock=datetime.datetime(2025,1,2,3,4,5)\n    job=schedule.Job(1)\n    job.next_run=clock\n    with patch(\"schedule.datetime.datetime\") as mocked:\n        mocked.now.return_value=clock\n        assert job.should_run\n        mocked.now.return_value=clock-datetime.timedelta(microseconds=1)\n        assert not job.should_run\n        mocked.now.return_value=clock+datetime.timedelta(microseconds=1)\n        assert job.should_run\n",
+  "tasks": [
+    {
+      "id": "real-nav-1",
+      "kind": "File Navigation",
+      "prompt": "Locate Scheduler.get_jobs in this repository. Explain how it filters by tag and what happens when tag is omitted. Cite the actual source path and observed implementation.",
+      "expected": [
+        "schedule/__init__.py",
+        "get_jobs",
+        "tag"
+      ]
+    },
+    {
+      "id": "real-nav-2",
+      "kind": "File Navigation",
+      "prompt": "Locate Scheduler.get_next_run and explain the return value when there are no scheduled jobs, including the source path and observed method.",
+      "expected": [
+        "schedule/__init__.py",
+        "get_next_run",
+        "none"
+      ]
+    },
+    {
+      "id": "real-understanding-1",
+      "kind": "Code Understanding",
+      "prompt": "Explain Job.should_run using repository evidence. Is equality with next_run considered ready to run? Cite the implementation path and method.",
+      "expected": [
+        "schedule/__init__.py",
+        "should_run"
+      ],
+      "answer_alternatives": [
+        ">=",
+        "equal",
+        "equality"
+      ]
+    },
+    {
+      "id": "real-understanding-2",
+      "kind": "Code Understanding",
+      "prompt": "Explain Scheduler.cancel_job behavior when the requested job is not scheduled. Cite observed implementation path, method and the exception it handles.",
+      "expected": [
+        "schedule/__init__.py",
+        "cancel_job",
+        "ValueError"
+      ]
+    },
+    {
+      "id": "real-bug-1",
+      "kind": "Bug Fix",
+      "prompt": "The scheduled-job tag filter returns the wrong subset. Inspect the repository, restore get_jobs(tag) so only jobs bearing that tag are returned, preserve the public API and verify actual tests. Existing contract tests are read-only.",
+      "mutation_old": "return [job for job in self.jobs if tag in job.tags]",
+      "mutation_new": "return [job for job in self.jobs if tag not in job.tags]"
+    },
+    {
+      "id": "real-bug-2",
+      "kind": "Bug Fix",
+      "prompt": "Cancelling one scheduled job unexpectedly removes other jobs. Inspect and repair cancellation, preserve the public API, and keep cancellation of an absent job harmless. Verify actual tests; existing contract tests are read-only.",
+      "mutation_old": "self.jobs.remove(job)",
+      "mutation_new": "self.jobs.clear()"
+    },
+    {
+      "id": "real-bug-3",
+      "kind": "Bug Fix",
+      "prompt": "A job is being marked overdue at the exact cancellation deadline. Restore the strict overdue boundary: equality remains eligible, only a later time is overdue, and no configured deadline means not overdue. Preserve APIs and verify tests. Contract tests are read-only.",
+      "mutation_old": "when > self.cancel_after",
+      "mutation_new": "when >= self.cancel_after"
+    },
+    {
+      "id": "real-tests-1",
+      "kind": "Test Generation",
+      "prompt": "Add collected, deterministic regression tests in test_candidate_v3.py for Job.should_run before, exactly at, and after next_run. Freeze/mock the clock; equality must be ready. Import the actual package and preserve production source and existing contract tests. Run real tests and report observed results.",
+      "mutation_old": "datetime.datetime.now() >= self.next_run",
+      "mutation_new": "datetime.datetime.now() > self.next_run"
+    }
+  ]
+}

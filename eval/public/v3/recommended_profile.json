@@ -1,0 +1,7 @@
+{
+  "recommended": "GATE_V3",
+  "skills": "optional/on-demand",
+  "basis": "development ablation + prespecified repeat-core; no heldout selection",
+  "reason": "仅用1.7b development机制对照及预定重复试验选推荐配置：GATE_V3 coding 0/8，FULL_V3 coding 0/8；repeat-core mean success 0.11/0.17。推荐 GATE_V3；强制 prefer_patch 不默认强制，hash/context patch能力仍可用。这是小样本实用选择，不是统计显著性结论，不使用heldout调参，也不重跑heldout替换成绩。",
+  "runtime_defaults_status": "Frozen measured source kept unchanged; explicit library configuration recommended"
+}
